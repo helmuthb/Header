@@ -67,14 +67,14 @@
 				<table class="settingsTable">
 					<tr>
 						<td><labelclass="text">Background-Color:</label></td>
-						<td><select id="Color" class="coBox" onchange="saveSetting('color', this);">
+						<td><select id="Color" class="coBox" onchange="chrome.extension.getBackgroundPage().saveSetting('color', this);">
 							<option value="green">Green</option>
 							<option value="grey">Grey</option></td>
 						</select></td>
 					</tr>
 					<tr>
 						<td><label class="text">Align:</label></td>
-						<td><select id="Align" class="coBox" onchange="saveSetting('align', this);">
+						<td><select id="Align" class="coBox" onchange="chrome.extension.getBackgroundPage().saveSetting('align', this);">
 							<option value="left">Left</option>
 							<option value="right">Right</option>
 							<option value="center">Center</option>
