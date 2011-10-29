@@ -1,0 +1,15 @@
+#address-info-chrome {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  color: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
