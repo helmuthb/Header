@@ -8,6 +8,11 @@ function saveSettingOld(name, value)
 {
 	localStorage.setItem(name, value[value.selectedIndex].value);
 }
+function getSetting(name)
+{
+  return chrome.extension.getBackgroundPage().getSetting(name);
+}
+
 function getSettings()
 {
 	var align = getSetting("align");
