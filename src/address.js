@@ -46,11 +46,9 @@ window.setInterval(showAddress, 100);
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
   // re-load the top bar
   var topHtml = document.getElementById("address-info-chrome");
-  alert(request.name);
   if (topHtml) {
     if (request.name == "color") {
       topHtml.style.backgroundColor = request.value;
-      alert("setting background to " + request.value);
     }
     if (request.name == "align") {
       topHtml.style.textAlign = request.value;
