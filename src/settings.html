@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Head - Settings</title>
+		<style type="text/css">
+			body, html
+			{
+				width: 100%;
+				height:  100%;
+			}
+			
+			td
+			{
+				text-align: left;
+			}
+			
+			.text
+			{
+				font-size: 11pt;
+			}
+			
+			#left
+			{
+				float: left;
+				width: 31%;
+				height: 100%;
+			}
+			
+			.settingsContainer
+			{
+				-webkit-box-shadow: 2px 2px 5px 2px #e6e5e5;
+				width: 67%;
+				height: 50%;
+				float: left;
+				padding-left: 20px;
+			}
+			
+			.pageContainer
+			{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			
+			#settingsText
+			{
+				color: #53637D;
+			}
+			
+			#settingsTable
+			{
+				text-algin: center;
+				width: 100%;
+				height: 100%;
+				float: center;
+			}
+			
+			.coBox
+			{
+				-webkit-appearance: button;
+				-webkit-border-radius: 2px;
+				-webkit-padding-start: 10px;
+				-webkit-padding-end: 5px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pageContainer">
+		<div id="left"></div>
+			<div class="settingsContainer">
+				<div id="settingsText">
+					<h1>Settings</h1>
+				</div>
+				<table class="settingsTable">
+					<tr>
+						<td><label class="text">Background-Color:</label></td><td><select class="coBox">
+																	 <option value="green">Green</option>
+																	 <option value="grey">Grey</option></td>
+																	 </select>
+					</tr>
+					<tr>
+						<td><label class="text">Align:</label></td><td><select class="coBox">
+														  <option value="left">Left</option>
+														  <option value="right">Right</option>
+														  <option value="center">Center</option>
+														  </select>
+																					
+					</td>
+			</table>
+			</div>
+		<div>
+	</body>
+</html>
