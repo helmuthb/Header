@@ -7,11 +7,23 @@ var showAddress = function() {
       newHtml = document.createElement("div");
       newHtml.id = "address-info-chrome";
       newHtml.onmouseover = function() {
-        newHtml.style.zIndex = -1000;
+        newHtml.style.display = "none";
+        // newHtml.style.zIndex = -1000;
         window.setTimeout(function() {
-          newHtml.style.zIndex = 1000;
+          // newHtml.style.zIndex = 1000;
+          newHtml.style.display = "block";
         }, 5000);
       };
+      var optAlign = localStorage.getItem("align");
+      var optBackground = localStorage.getItem("color");
+      if (optAlign == undefined) {
+        optAlign = "left";
+      }
+      if (optBackground == undefined) {
+        optBackground = "green";
+      }
+      newHtml.style.textAlign = optAlign;
+      newHtml.style.backgroundColor = optBackground;
     }
     var newText = newHtml.firstChild;
     if (newText == undefined) {
