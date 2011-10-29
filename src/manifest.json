@@ -2,11 +2,14 @@
   "name": "Header",
   "version": "1.0",
   "description": "Chrome extension to display the website title",
+  "browser_action" : {
+    "popup": "settings.html"
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
       "js": ["address.js"],
       "css": ["address.css"]
     }
-  ],
+  ]
 }
