@@ -58,6 +58,7 @@
 		</style>
 	</head>
 	<body>
+		<script type="text/javascript" src="writesettings.js"></script>
 		<div class="pageContainer">
 			<div class="settingsContainer">
 				<div id="settingsText">
@@ -66,20 +67,26 @@
 				<table class="settingsTable">
 					<tr>
 						<td><label class="text">Background-Color:</label></td>
-						<td><select class="coBox">
+						<td><select class="coBox" onchange="saveSetting('color', this);">
 							<option value="green">Green</option>
 							<option value="grey">Grey</option></td>
 						</select></td>
 					</tr>
 					<tr>
 						<td><label class="text">Align:</label></td>
-						<td><select class="coBox">
+						<td><select class="coBox" onchange="saveSetting('align', this);">
 							<option value="left">Left</option>
 							<option value="right">Right</option>
 							<option value="center">Center</option>
 					    </select></td>
 					</tr>
 			</table>
+			<div id="settingsText">
+					<h1>Settings</h1>
+					<form name="Debug" action="">
+						<input type="text" name="results">
+					</form>
+				</div>
 			</div>
 		<div>
 	</body>
