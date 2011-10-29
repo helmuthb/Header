@@ -4,7 +4,7 @@
   "description": "Chrome extension to display the website title",
   "browser_action" : {
     "popup": "settings.html",
-    "default_logo": "logo-19.png"
+    "default_icon": "logo-19.png"
   },
   "content_scripts": [
     {
