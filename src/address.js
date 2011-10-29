@@ -16,10 +16,11 @@ var showAddress = function() {
       };
       var optAlign = localStorage.getItem("align");
       var optBackground = localStorage.getItem("color");
-      if (optAlign == undefined) {
+      alert(optAlign);
+      if (!optAlign) {
         optAlign = "left";
       }
-      if (optBackground == undefined) {
+      if (!optBackground) {
         optBackground = "green";
       }
       newHtml.style.textAlign = optAlign;
