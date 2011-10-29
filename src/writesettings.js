@@ -9,11 +9,16 @@ function saveSettingOld(name, value)
 	localStorage.setItem(name, value[value.selectedIndex].value);
 }
 
+function getSetting(name)
+{
+  return chrome.extension.getBackgroundPage().getSetting(name);
+}
+
 function getSettings()
 {
-	var align = localStorage.getItem("align");
-	var color = localStorage.getItem("color");
-	var transp = localStorage.getItem("transp");
+	var align = getSetting("align");
+	var color = getSetting("color");
+	var transp = getSetting("transp");
 	
 	var alignSelect = document.getElementById("Align");
 	var colorSelect = document.getElementById("Color");
