@@ -4,9 +4,11 @@ function saveSetting(name, value)
 {
   localStorage.setItem(name, value);
   /* call content script to update the top bar */
+  /*
   chrome.tabs.getSelected(null, function(tab) {
     chrome.tabs.sendRequest(tab.id, {"name":name, "value":value});
   });
+  */
 }
 
 function getSetting(name)
@@ -20,7 +22,7 @@ chrome.extension.onRequest.addListener(
     if (request.names) {
       for (var k=0; k<request.names.length; k++) {
         var name = request.names[k].toString();
-        response[name] = localStorage.getItem(name);
+        response[name] = getSetting(name);
       }
       sendResponse(response);
     }

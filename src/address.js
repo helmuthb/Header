@@ -43,6 +43,7 @@ var showAddress = function() {
 };
 showAddress();
 window.setInterval(showAddress, 100);
+
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
   // re-load the top bar
   var topHtml = document.getElementById("address-info-chrome");
@@ -53,5 +54,6 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     if (request.name == "align") {
       topHtml.style.textAlign = request.value;
     }
+    topHtml.parentNode.removeChild(topHtml);
   }
 });
