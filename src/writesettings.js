@@ -9,6 +9,10 @@ function getSettings()
 	var align = localStorage.getItem("align");
 	var color = localStorage.getItem("color");
 	
-	document.Debug.results.value = align + "|" + color;
+	var alignSelect = document.getElementById("Align");
+	var colorSelect = document.getElementById("Color");
+	
+	alignSelect.value = align;
+	colorSelect.value = color;
 }
 
