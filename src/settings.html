@@ -6,37 +6,37 @@
 			{
 				min-width: 200px;
 			}
-			
+
 			td
 			{
 				text-align: left;
 			}
-			
+
 			.text
 			{
 				font-size: 11pt;
 			}
-			
+
 			.settingsContainer
 			{
 				width: 100%;
 				height: 100%;
 				float: left;
 			}
-			
+
 			.pageContainer
 			{
 				width: 100%;
 				height: 100%;
 				font-family: Arial;
 			}
-			
+
 			#settingsText
 			{
 				color: #53637D;
 				margin-left: 40px;
 			}
-			
+
 			#settingsTable
 			{
 				text-algin: center;
@@ -44,7 +44,7 @@
 				height: 100%;
 				float: center;
 			}
-			
+
 			.coBox
 			{
 				-webkit-appearance: button;
@@ -68,8 +68,8 @@
 					<tr>
 						<td><label class="text">Background-Color:</label></td>
 						<td><select id="Color" class="coBox" onchange="saveSetting('color', this);">
-							<option value="green">Green</option>
-							<option value="grey">Grey</option></td>
+							<option value="00ff00">Green</option>
+							<option value="808080">Grey</option></td>
 						</select></td>
 					</tr>
 					<tr>
@@ -83,11 +83,11 @@
 					<tr>
 						<td><label class="text">Transparency:</label></td>
 						<td><select id="Transp" class="coBox" onchange="saveSetting('transp', this);">
-								<option value="0">    0%</option>
-								<option value="25">  25%</option>
-								<option value="50">  50%</option>
-								<option value="75">  75%</option>
-								<option value="100">100%</option>
+								<option value="00">    0%</option>
+								<option value="40">  25%</option>
+								<option value="80">  50%</option>
+								<option value="C0">  75%</option>
+								<option value="FF">100%</option>
 							</select>
 					</tr>
 			</table>

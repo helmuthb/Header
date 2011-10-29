@@ -14,17 +14,21 @@ var showAddress = function() {
           newHtml.style.display = "block";
         }, 5000);
       };
-      chrome.extension.sendRequest({names:["align","color"]}, function(response) {
+      chrome.extension.sendRequest({names:["align","color","transp"]}, function(response) {
         var optAlign = response["align"];
         var optBackground = response["color"];
+        var transparency = response["transp"];
         if (!optAlign) {
           optAlign = "left";
         }
         if (!optBackground) {
-          optBackground = "green";
+          optBackground = "00ff00";
+        }
+        if (!optTransparency) {
+          optTransparency = "00";
         }
         newHtml.style.textAlign = optAlign;
-        newHtml.style.backgroundColor = optBackground;
+        newHtml.style.backgroundColor = "rgba(" + optBackground + optTransparency + ")";
       });
     }
     var newText = newHtml.firstChild;
@@ -39,3 +43,17 @@ var showAddress = function() {
 };
 showAddress();
 window.setInterval(showAddress, 100);
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+  // re-load the top bar
+  var topHtml = document.getElementById("address-info-chrome");
+  alert(request.name);
+  if (topHtml) {
+    if (request.name == "color") {
+      topHtml.style.backgroundColor = request.value;
+      alert("setting background to " + request.value);
+    }
+    if (request.name == "align") {
+      topHtml.style.textAlign = request.value;
+    }
+  }
+});
