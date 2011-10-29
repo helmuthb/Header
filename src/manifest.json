@@ -12,5 +12,13 @@
       "js": ["address.js"],
       "css": ["address.css"]
     }
-  ]
+  ],
+  "icons": {
+     "16": "logo-16.png",
+     "19": "logo-19.png",
+     "48": "logo-48.png",
+    "128": "logo-128.png"
+  },
+  "homepage_url": "https://github.com/helmuthb/Header"
+  /* "options_page": "settings.html" */
 }
