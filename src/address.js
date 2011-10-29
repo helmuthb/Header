@@ -6,7 +6,7 @@ var showAddress = function() {
     if (newHtml == undefined) {
       newHtml = document.createElement("div");
       newHtml.id = "address-info-chrome";
-      newHtml.onmouseoverX = function() {
+      newHtml.onmouseover = function() {
         newHtml.style.display = "none";
         // newHtml.style.zIndex = -1000;
         window.setTimeout(function() {
