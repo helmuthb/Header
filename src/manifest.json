@@ -3,7 +3,8 @@
   "version": "1.0",
   "description": "Chrome extension to display the website title",
   "browser_action" : {
-    "popup": "settings.html"
+    "popup": "settings.html",
+    "default_logo": "logo-19.png"
   },
   "content_scripts": [
     {
