@@ -1,7 +1,7 @@
 window.onload = function() {getSettings();};
-function saveSetting(name, value)
+function saveSetting(name, valBox)
 {
-  chrome.extension.getBackgroundPage().saveSetting(name, value);
+  chrome.extension.getBackgroundPage().saveSetting(name, valBox[valBox.selectedIndex].value);
 }
 
 function getSettings()
