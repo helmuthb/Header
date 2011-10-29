@@ -19,6 +19,7 @@
      "48": "logo-48.png",
     "128": "logo-128.png"
   },
-  "homepage_url": "https://github.com/helmuthb/Header"
+  "homepage_url": "https://github.com/helmuthb/Header",
+  "background_page": "background.html"
   /* "options_page": "settings.html" */
 }

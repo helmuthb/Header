@@ -1,5 +1,5 @@
 window.onload = function() {getSettings();};
-function saveSetting(name, value)
+function saveSettingOld(name, value)
 {
 	localStorage.setItem(name, value[value.selectedIndex].value);
 }

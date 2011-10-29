@@ -14,17 +14,18 @@ var showAddress = function() {
           newHtml.style.display = "block";
         }, 5000);
       };
-      var optAlign = localStorage.getItem("align");
-      var optBackground = localStorage.getItem("color");
-      alert(optAlign);
-      if (!optAlign) {
-        optAlign = "left";
-      }
-      if (!optBackground) {
-        optBackground = "green";
-      }
-      newHtml.style.textAlign = optAlign;
-      newHtml.style.backgroundColor = optBackground;
+      chrome.extension.sendRequest({names:["align","color"]}, function(response) {
+        var optAlign = response["align"];
+        var optBackground = response["color"];
+        if (!optAlign) {
+          optAlign = "left";
+        }
+        if (!optBackground) {
+          optBackground = "green";
+        }
+        newHtml.style.textAlign = optAlign;
+        newHtml.style.backgroundColor = optBackground;
+      });
     }
     var newText = newHtml.firstChild;
     if (newText == undefined) {
