@@ -1,7 +1,7 @@
 window.onload = function() {getSettings();};
 function saveSetting(name, value)
 {
-	localStorage.setItem(name, value[value.selectedIndex].value);
+  chrome.extension.getBackgroundPage().saveSetting(name, value);
 }
 
 function getSettings()

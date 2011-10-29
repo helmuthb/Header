@@ -17,11 +17,13 @@ function getSetting(name)
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
     var response = {};
-    for (var k=0; k<request.names.length; k++) {
-      var name = request.names[k].toString();
-      response[name] = localStorage.getItem(name);
+    if (request.names) {
+      for (var k=0; k<request.names.length; k++) {
+        var name = request.names[k].toString();
+        response[name] = localStorage.getItem(name);
+      }
+      sendResponse(response);
     }
-    sendResponse(response);
   }
 );
 </script>

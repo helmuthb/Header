@@ -17,18 +17,18 @@ var showAddress = function() {
       chrome.extension.sendRequest({names:["align","color","transp"]}, function(response) {
         var optAlign = response["align"];
         var optBackground = response["color"];
-        var transparency = response["transp"];
+        var optTransparency = response["transp"];
         if (!optAlign) {
           optAlign = "left";
         }
         if (!optBackground) {
-          optBackground = "00ff00";
+          optBackground = "0,255,0";
         }
         if (!optTransparency) {
-          optTransparency = "00";
+          optTransparency = "0";
         }
         newHtml.style.textAlign = optAlign;
-        newHtml.style.backgroundColor = "rgba(" + optBackground + optTransparency + ")";
+        newHtml.style.backgroundColor = "rgba(" + optBackground + "," +optTransparency + ")";
       });
     }
     var newText = newHtml.firstChild;
