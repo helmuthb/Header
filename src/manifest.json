@@ -22,7 +22,7 @@
   "homepage_url": "https://github.com/helmuthb/Header",
   "background_page": "background.html",
   "permissions": [
-    "tabs"
+    "tabs", "windows"
   ]
   /* "options_page": "settings.html" */
 }

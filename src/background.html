@@ -3,12 +3,16 @@
 function saveSetting(name, value)
 {
   localStorage.setItem(name, value);
-  /* call content script to update the top bar */
-  /*
-  chrome.tabs.getSelected(null, function(tab) {
-    chrome.tabs.sendRequest(tab.id, {"name":name, "value":value});
+  /* call content scripts to update the top bar */
+  chrome.windows.getAll( {populate: true}, function(windows) {
+    for (var i=0; i<windows.length; i++) {
+      for (var j=0; j<windows[i].tabs.length; j++) {
+        chrome.tabs.sendRequest(
+                  windows[i].tabs[j].id,
+                  {"name":name, "value":value});
+      }
+    }
   });
-  */
 }
 
 function getSetting(name)

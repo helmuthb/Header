@@ -1,4 +1,8 @@
 var latestAddress = "";
+var transparency = "0.5";
+var color = "128,128,128";
+var align = "left";
+
 var showAddress = function() {
   if (latestAddress != document.title) {
     latestAddress = document.title;
@@ -15,20 +19,20 @@ var showAddress = function() {
         }, 5000);
       };
       chrome.extension.sendRequest({names:["align","color","transp"]}, function(response) {
-        var optAlign = response["align"];
-        var optBackground = response["color"];
-        var optTransparency = response["transp"];
-        if (!optAlign) {
-          optAlign = "left";
+        align = response["align"];
+        color = response["color"];
+        transparency = response["transp"];
+        if (!align) {
+          align = "left";
         }
-        if (!optBackground) {
-          optBackground = "0,255,0";
+        if (!color) {
+          color = "0,255,0";
         }
-        if (!optTransparency) {
-          optTransparency = "0";
+        if (!transparency) {
+          transparency = "0";
         }
-        newHtml.style.textAlign = optAlign;
-        newHtml.style.backgroundColor = "rgba(" + optBackground + "," +optTransparency + ")";
+        newHtml.style.textAlign = align;
+        newHtml.style.backgroundColor = "rgba(" + color + "," +transparency + ")";
       });
     }
     var newText = newHtml.firstChild;
@@ -49,11 +53,17 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
   var topHtml = document.getElementById("address-info-chrome");
   if (topHtml) {
     if (request.name == "color") {
-      topHtml.style.backgroundColor = request.value;
+      color = request.value;
+    }
+    if (request.name == "transp") {
+      transparency = request.value;
     }
     if (request.name == "align") {
-      topHtml.style.textAlign = request.value;
+      align = request.value;
     }
-    topHtml.parentNode.removeChild(topHtml);
+    topHtml.style.backgroundColor = "rgba("+color+","+transparency+")";
+    topHtml.style.textAlign = align;
+    // topHtml.parentNode.removeChild(topHtml);
+    lastAddress = "";
   }
 });
